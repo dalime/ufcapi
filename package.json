@@ -1,0 +1,51 @@
+{
+  "name": "walkingdeadapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/main.js",
+  "scripts": {
+    "start": "node server/main.js",
+    "postinstall": "webpack",
+    "build": "NODE_ENV = 'production' webpack",
+    "prod": "NODE_ENV = 'production' npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "6.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalime/walkingdeadapi.git"
+  },
+  "keywords": [],
+  "author": "Danny Lim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalime/walkingdeadapi/issues"
+  },
+  "homepage": "https://github.com/dalime/walkingdeadapi#readme",
+  "dependencies": {
+    "axios": "^0.15.2",
+    "babel-cli": "^6.18.0",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "bootstrap-loader": "^2.0.0-beta.12",
+    "cookie-parser": "^1.4.3",
+    "css-loader": "^0.25.0",
+    "exports-loader": "^0.6.3",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "flux": "^3.1.0",
+    "mongoose": "^4.6.5",
+    "morgan": "^1.7.0",
+    "node-sass": "^3.10.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1",
+    "resolve-url-loader": "^1.6.0",
+    "sass-loader": "^4.0.2",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
+  }
+}
