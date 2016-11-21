@@ -5,9 +5,12 @@ const fighterSchema = new mongoose.Schema({
   dob: {type: Date, required: true},
   height: {type: Number, required: true, default: 0},
   weight: {type: Number, required: true, default: 0},
-  team: {type: String, required: true, default: 'N/A'},
+  teams: [{type: mongoose.Schema.Types.ObjectId, ref: 'Team'}],
   class: {type: String, required: true},
-  record: {type: String, required: true, default: '0-0-0'}
+  wins: [{type: mongoose.Schema.Types.ObjectId, ref: 'Fighter'}],
+  losses: [{type: mongoose.Schema.Types.ObjectId, ref: 'Fighter'}],
+  draws: [{type: mongoose.Schema.Types.ObjectId, ref: 'Fighter'}],
+  events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event'}]
 });
 
 const Fighter = mongoose.model('Fighter', fighterSchema);
