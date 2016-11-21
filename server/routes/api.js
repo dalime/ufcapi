@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/characters', require('./characters'));
+router.use('/fighters', require('./fighters'));
 
 module.exports = router;
