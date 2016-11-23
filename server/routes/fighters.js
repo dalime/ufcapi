@@ -91,3 +91,5 @@ router.put('/:figherId/removeEvent/:teamId', (req, res) => {
     res.status(err ? 400 : 200).send(err || updatedFighter);
   })
 });
+
+module.exports = router;

@@ -1,5 +1,5 @@
 const PORT = process.env.PORT || 8000;
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/twd';
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/ufcapi';
 
 // PACKAGE REQUIRES
 const bodyParser = require('body-parser'); // used to parse req.body
@@ -27,10 +27,12 @@ if (process.env.NODE_ENV === 'production') {
 
   app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
-    publicPath: webpack(webpackConfig.output.publicPath)
+    publicPath: webpackConfig.output.publicPath
   }));
 
-  app.use(require('webpack-hot-middleware')(compiler));
+  app.use(require('webpack-hot-middleware')(compiler, {
+    noInfo: true
+  }));
 }
 
 // GENERAL MIDDLEWARE
@@ -43,7 +45,7 @@ app.use(cookieParser());
 app.use('/api', require('./routes/api'));
 
 app.get('*', (req, res) => {
-  let indexPath = path.join(__dirname, './index.html');
+  let indexPath = path.join(__dirname, '../index.html');
   res.sendFile(indexPath);
 });
 

@@ -31,3 +31,5 @@ router.route('/:id')
       res.status(err ? 400 : 200).send(err || updatedTeam);
     })
   });
+
+module.exports = router;

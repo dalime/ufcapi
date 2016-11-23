@@ -1,22 +1,26 @@
-const webpack = require('webpack'); // require in webpack
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  debug: true,
+  devtool: 'cheap-module-eval-source-map',
   entry: [
+    'webpack-hot-middleware/client?reload=true',
     'bootstrap-loader',
-    './src/main.js'
+    './src/index'
   ],
+  target: 'web',
   output: {
     path: path.join(__dirname, '/build'),
     publicPath: '/',
     filename: 'bundle.js'
   },
+  devServer: {
+    contentBase: './src'
+  },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [
@@ -30,7 +34,7 @@ module.exports = {
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
-      {test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports?jQuery=jquery'}
+      { test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports?jQuery=jquery' }
     ]
   }
 }

@@ -1,6 +1,13 @@
 const webpack = require('webpack'); // require in webpack
 const path = require('path');
 
+const reactDomLibPath = path.join(__dirname, "./node_modules/react-dom/lib");
+let alias = {};
+["EventPluginHub", "EventConstants", "EventPluginUtils", "EventPropagators",
+ "SyntheticUIEvent", "CSSPropertyOperations", "ViewportMetrics"].forEach(function(filename){
+    alias["react/lib/"+filename] = path.join(__dirname, "./node_modules/react-dom/lib", filename);
+});
+
 module.exports = {
   debug: true,
   devtool: 'cheap-module-eval-source-map',
@@ -27,7 +34,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: path.join(__dirname, 'src'),
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {test: /(\.css)$/, loaders: ['style', 'css']},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
@@ -36,5 +43,6 @@ module.exports = {
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
       {test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports?jQuery=jquery'}
     ]
-  }
+  },
+  resolve: {alias: alias}
 }
