@@ -12,9 +12,9 @@ export default class NavBar extends Component {
     return (
       <AppBar title="UFC API" showMenuIconButton={false}>
         <Tabs>
-          <Tab label="Fighters"/>
-          <Tab label="Gyms" />
-          <Tab label="Teams" />
+          <Tab label="Fighters" onClick={this.navigate}/>
+          <Tab label="Gyms"  onClick={this.navigate}/>
+          <Tab label="Teams"  onClick={this.navigate}/>
         </Tabs>
       </AppBar>
     )
