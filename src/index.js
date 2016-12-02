@@ -12,9 +12,6 @@ import Character from './components/Character';
 
 import store from './store';
 
-const injectTapEventPlugin = require('react-tap-event-plugin');
-injectTapEventPlugin();
-
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
