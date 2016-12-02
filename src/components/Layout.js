@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import NavBar from './NavBar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 export default class Layout extends Component {
   constructor(props) {
     super(props);
@@ -7,9 +10,11 @@ export default class Layout extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Test</h1>
-      </div>
+      <MuiThemeProvider>
+        <div>
+          <NavBar />
+        </div>
+      </MuiThemeProvider>
     )
   }
 }

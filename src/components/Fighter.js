@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Character extends Component {
+class Fighter extends Component {
   constructor(props) {
     super(props);
   }
@@ -12,4 +12,4 @@ class Character extends Component {
   }
 }
 
-export default Character;
+export default Fighter;

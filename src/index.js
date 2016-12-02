@@ -8,7 +8,7 @@ import './style.css';
 import Layout from './components/Layout';
 import Splash from './components/Splash';
 import Search from './components/Search';
-import Character from './components/Character';
+import Fighter from './components/Fighter';
 
 import store from './store';
 
@@ -18,7 +18,7 @@ render(
       <Route path='/' component={Layout}>
         <IndexRoute component={Splash} />
         <Route path='/search' component={Search} />
-        <Route path='/character/:id' component={Character} />
+        <Route path='/character/:id' component={Fighter} />
       </Route>
     </Router>
   </Provider>,
