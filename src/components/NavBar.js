@@ -6,6 +6,11 @@ export default class NavBar extends Component {
   constructor(props) {
     super(props);
 
+    this.navigate = this.navigate.bind(this);
+  }
+
+  navigate() {
+
   }
 
   render() {

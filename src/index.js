@@ -12,6 +12,9 @@ import Fighter from './components/Fighter';
 
 import store from './store';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
