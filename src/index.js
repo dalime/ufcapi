@@ -8,7 +8,10 @@ import './style.css';
 import Layout from './components/Layout';
 import Splash from './components/Splash';
 import Search from './components/Search';
+import Fighters from './components/Fighters';
 import Fighter from './components/Fighter';
+import Teams from './components/Teams';
+import Events from './components/Events';
 
 import store from './store';
 
@@ -21,7 +24,10 @@ render(
       <Route path='/' component={Layout}>
         <IndexRoute component={Splash} />
         <Route path='/search' component={Search} />
-        <Route path='/character/:id' component={Fighter} />
+        <Route path='/events' component={Events} />
+        <Route path='/teams' component={Teams} />
+        <Route path='/fighters' component={Fighters} />
+        <Route path='/fighter/:id' component={Fighter} />
       </Route>
     </Router>
   </Provider>,
