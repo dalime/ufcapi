@@ -24,9 +24,11 @@ export default class NavBar extends Component {
     return (
       <AppBar title="UFC API" showMenuIconButton={false}>
         <Tabs>
+          <Tab label="Home" onClick={this.navigate.bind(null, '/')} style={styles.tab}/>
           <Tab label="Fighters" onClick={this.navigate.bind(null, '/fighters')} style={styles.tab} />
           <Tab label="Teams"  onClick={this.navigate.bind(null, '/teams')} style={styles.tab} />
           <Tab label="Events"  onClick={this.navigate.bind(null, '/events')} style={styles.tab} />
+          <Tab label="Add" onClick={this.navigate.bind(null, '/add')} style={styles.tab} />
         </Tabs>
       </AppBar>
     )
